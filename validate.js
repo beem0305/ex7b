@@ -1,12 +1,16 @@
 function checkSID() {
   let sid = (document.getElementById("sid").value).trim();
   if (sid.length == 10) {
-    return true;
+    alert("Student ID must be 10 characters");
+	return true;
   } else {
-    return false;
-  }
+	if(!/^[0-9]+$/.test(sid)){
+        alert("Student ID must contain only numbers (0-9)");
+        return false;
+    	}
+	return false;
+	}
 }
-
 function checkCandiNo() {
   let candi = (document.getElementById("candi").value).trim();
   if (isNaN(candi) || candi < 1) {
